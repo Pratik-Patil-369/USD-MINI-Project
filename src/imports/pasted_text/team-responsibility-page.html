@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Team Responsibility - CollabHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "inverse-on-surface": "#9c9d9f",
+                "on-surface-variant": "#596065",
+                "surface": "#f9f9fb",
+                "error-container": "#fe8983",
+                "on-secondary-fixed-variant": "#0052d0",
+                "tertiary-dim": "#734b00",
+                "surface-bright": "#f9f9fb",
+                "outline": "#757c81",
+                "on-tertiary-fixed": "#331f00",
+                "tertiary-fixed-dim": "#ec9e00",
+                "on-secondary": "#f9f8ff",
+                "secondary": "#0055d7",
+                "error": "#9f403d",
+                "primary-fixed-dim": "#d4d4d4",
+                "on-background": "#2d3338",
+                "on-tertiary-fixed-variant": "#5b3b00",
+                "secondary-dim": "#004abe",
+                "on-secondary-container": "#0049bb",
+                "primary-fixed": "#e2e2e2",
+                "inverse-surface": "#0c0e10",
+                "tertiary": "#835600",
+                "tertiary-fixed": "#feaa00",
+                "tertiary-container": "#feaa00",
+                "background": "#f9f9fb",
+                "on-primary-fixed": "#3f3f3f",
+                "surface-container-lowest": "#ffffff",
+                "primary-container": "#e2e2e2",
+                "secondary-fixed-dim": "#c7d3ff",
+                "on-secondary-fixed": "#003894",
+                "surface-container-low": "#f2f4f6",
+                "primary": "#5e5e5e",
+                "outline-variant": "#acb3b8",
+                "on-surface": "#2d3338",
+                "on-error": "#fff7f6",
+                "on-primary": "#f8f8f8",
+                "on-tertiary-container": "#503300",
+                "on-error-container": "#752121",
+                "secondary-container": "#dae1ff",
+                "surface-dim": "#d3dbe2",
+                "error-dim": "#4e0309",
+                "secondary-fixed": "#dae1ff",
+                "on-tertiary": "#fff8f2",
+                "surface-tint": "#5e5e5e",
+                "surface-container": "#ebeef2",
+                "surface-variant": "#dde3e9",
+                "surface-container-highest": "#dde3e9",
+                "primary-dim": "#525252",
+                "inverse-primary": "#ffffff",
+                "surface-container-high": "#e4e9ee",
+                "on-primary-fixed-variant": "#5b5b5b",
+                "on-primary-container": "#525252"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Component -->
+<nav class="fixed top-0 left-0 bottom-0 w-[240px] flex flex-col py-4 px-3 z-50 bg-[#f2f4f6] dark:bg-[#161616] border-r border-gray-200 dark:border-gray-800 transition-all duration-150 ease-in-out font-['Inter'] text-[13px] font-medium leading-none">
+<div class="px-2 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div>
+<h1 class="text-base font-black tracking-tighter text-[#2d3338] dark:text-[#f9f9fb]">Engineering Hub</h1>
+<p class="text-[10px] text-on-surface-variant font-bold opacity-60">V3.0</p>
+</div>
+</div>
+</div>
+<div class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#596065] dark:text-[#acb3b8] hover:text-[#2d3338] dark:hover:text-[#ffffff] hover:bg-[#e4e9ee]/50 dark:hover:bg-[#2a2a2a]/50 transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#596065] dark:text-[#acb3b8] hover:text-[#2d3338] dark:hover:text-[#ffffff] hover:bg-[#e4e9ee]/50 dark:hover:bg-[#2a2a2a]/50 transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span>Task Board</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-[#e4e9ee] dark:bg-[#2a2a2a] text-[#2d3338] dark:text-[#ffffff] rounded-md transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span>Team Responsibility</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#596065] dark:text-[#acb3b8] hover:text-[#2d3338] dark:hover:text-[#ffffff] hover:bg-[#e4e9ee]/50 dark:hover:bg-[#2a2a2a]/50 transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">timeline</span>
+<span>Project Timeline</span>
+</a>
+</div>
+<div class="mt-auto px-2 mb-4">
+<button class="w-full py-2.5 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-md text-[13px] font-bold shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                New Project
+            </button>
+</div>
+<div class="space-y-1 pt-4 border-t border-gray-200 dark:border-gray-800">
+<a class="flex items-center gap-3 px-3 py-2 text-[#596065] dark:text-[#acb3b8] hover:text-[#2d3338] dark:hover:text-[#ffffff] transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#596065] dark:text-[#acb3b8] hover:text-[#2d3338] dark:hover:text-[#ffffff] transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+<span>Support</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar Component -->
+<header class="fixed top-0 right-0 left-[240px] h-16 px-6 flex justify-between items-center z-40 bg-[#f9f9fb] dark:bg-[#0a0a0a] border-b border-gray-200 dark:border-gray-800 font-['Inter'] font-semibold text-sm tracking-tight">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-md pl-10 pr-4 py-1.5 text-xs focus:ring-1 focus:ring-secondary/40 transition-all" placeholder="Search tasks or people..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors rounded-full active:scale-90">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors rounded-full active:scale-90">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-gray-200 ml-2">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="close-up portrait of a young professional with short dark hair and a confident expression against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFkzkvWOQJacfybzhlMdqNAT0Ox0RhTxwNs1y-gSFxI3HwPyyaECV62QRi-QxYV2h7ZC_GdXzl-QY9LbiyfW1657mirsAli5FItZIq1WSISXL2nUul-AaiHgptR_qL-En_2Hr-rDJGJ1zHquMbP0PeRvaVzbfoi4DSGshOqUHqMVWPMzJcecqczc-bGiFbZpkI9HQlhnmtQPsaAwc_W4VhbNQpZ6RtLjZOdol5QToYG1sUR1niCEiKhTMW91ZjuyIg134pV4MnpOez"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] mt-16 p-6 min-h-[calc(100vh-64px)]">
+<div class="max-w-[1152px] mx-auto">
+<!-- System Intelligence Alert -->
+<div class="mb-6 flex items-center gap-3 px-4 py-3 bg-error/10 border border-error/30 rounded-lg text-error text-sm font-medium animate-pulse"><span class="material-symbols-outlined text-[20px]">info</span>
+<span><strong>System Intelligence:</strong> Sarah Chen is overloaded (100% capacity). Reassign 2 tasks to Marcus Thorne to maintain velocity.</span></div>
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-[26px] font-bold tracking-tight text-on-surface mb-1">Team Responsibility</h2>
+<p class="text-on-surface-variant text-sm">Real-time capacity and workload distribution overview.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-low text-on-surface-variant text-xs font-semibold rounded-md border border-outline-variant/15 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter View
+                    </button>
+<button class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-low text-on-surface-variant text-xs font-semibold rounded-md border border-outline-variant/15 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[18px]">share</span>
+                        Export PDF
+                    </button>
+</div>
+</div>
+<!-- Responsibility Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Column 1: Rahul Sharma -->
+<section class="flex flex-col gap-6 p-1">
+<div class="flex items-center gap-3 px-1">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high ring-2 ring-surface">
+<img alt="Rahul Sharma" data-alt="professional headshot of a smiling young man of South Asian descent with short black hair and a clean-shaven face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2xBXCYw4M3YI9yJaG8_1LqifmWJ9SK0hKZPAARIPN779pqQpSXQbavRbco94JAtkmJRgg1fpmVRi_wHmMNjOJzo_SbEehgO56HUUfAMqEm5O9He-zhNe9aqY_rLYuT33MeiOxOCiBsoOwpW8lKPbor3oTgLt-r2KT2I0omotKZD9Qbj1fM_94SiX6tFSxDptZTMFXSjX8gZft76PiyDld2hAsJd2sQeuRBPN_5q5eiORtpPhnALTwmufN9w_Ftv7LCsFpq4IHJUvq"/>
+</div>
+<div class="flex-1">
+<h3 class="text-[17px] font-bold text-on-surface leading-none">Rahul Sharma</h3>
+<div class="mt-2 space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-bold text-on-surface-variant">
+<span>Workload: 65%</span>
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>2 Overdue</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors self-start">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="space-y-3">
+<!-- Task Card 1 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[14px] font-bold text-on-surface group-hover:text-secondary transition-colors">Infrastructure Setup</h4>
+<span class="bg-error-container/20 text-error px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">HIGH</span>
+</div>
+<div class="flex items-center justify-between text-[12px] text-on-surface-variant/50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>Oct 12</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-5 h-5 rounded-full border-2 border-surface-container-lowest bg-secondary-container flex items-center justify-center text-[8px] font-bold text-on-secondary-container opacity-100">JD</div>
+</div>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm opacity-90">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[14px] font-bold text-on-surface">API Documentation</h4>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">MED</span>
+</div>
+<div class="flex items-center justify-between text-[12px] text-error font-medium">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+<span>Overdue 3d</span>
+</div>
+</div>
+</div>
+<!-- Task Card 3 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[14px] font-bold text-on-surface">Database Migration</h4>
+<span class="bg-error-container/20 text-error px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">HIGH</span>
+</div>
+<div class="flex items-center justify-between text-[12px] text-on-surface-variant/50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>Oct 15</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Column 2: Sarah Chen (AT CAPACITY) -->
+<section class="flex flex-col gap-6 p-2 bg-error/[0.02] rounded-xl ring-1 ring-error/5">
+<div class="flex items-center gap-3 px-1">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high ring-2 ring-surface relative">
+<img alt="Sarah Chen" data-alt="clear headshot of a young woman with dark hair and friendly facial expression against a bright soft-lit background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOncdly9eNSTJ_oA2ytAGCS1v5aurwfx800eso3b3xM8hELBVton-4QV7eMtwFY1FUtLZFfzTZVX63IYPUoFx2w9J6BZESSs23QrNCgvKn1HSzDHudNrBeYjVKpCvNhVgCe0thKFc2BVu56sRz1vUGrFfk6E4GN9sMqXtwpYU2f56w2sieqsuQLFu1VGIVaNx3GCLB6d0nkp4fvyBpBRdKelGdI2EI15eOrbOvzJmzwnoiGf2BydF22V2leFVERUjw5biChqfk1wZY"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2"><h3 class="text-[17px] font-bold text-on-surface leading-none">Sarah Chen</h3><span class="bg-error text-white text-[8px] font-black px-1.5 py-0.5 rounded tracking-tight">NEEDS ATTENTION</span><button class="ml-auto bg-error text-white text-[10px] font-bold px-2 py-1 rounded hover:bg-error-dim transition-colors flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[14px]">bolt</span>Rebalance</button></div>
+<div class="mt-2 space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-bold text-error">
+<span>Workload: 100%</span>
+<span class="text-on-surface-variant/60 font-medium">0 Overdue</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors self-start">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="space-y-3">
+<!-- Task Card 1 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm border-l-4 border-secondary">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[14px] font-bold text-on-surface">Frontend Architecture</h4>
+<span class="bg-error-container/20 text-error px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">HIGH</span>
+</div>
+<div class="flex items-center justify-between text-[12px] text-on-surface-variant/50">
+<div class="flex items-center gap-1.5 font-bold text-secondary opacity-100">
+<span class="material-symbols-outlined text-[14px]">play_circle</span>
+<span>IN PROGRESS</span>
+</div>
+<span class="text-[10px]">Oct 14</span>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[14px] font-bold text-on-surface">UI Kit Implementation</h4>
+<span class="bg-error-container/20 text-error px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">HIGH</span>
+</div>
+<div class="flex items-center justify-between text-[12px] text-on-surface-variant/50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>Oct 18</span>
+</div>
+</div>
+</div>
+<!-- Task Card 3 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[14px] font-bold text-on-surface">Responsive Design QA</h4>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">MED</span>
+</div>
+<div class="flex items-center justify-between text-[12px] text-on-surface-variant/50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>Oct 20</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Column 3: Marcus Thorne -->
+<section class="flex flex-col gap-6 p-1">
+<div class="flex items-center gap-3 px-1">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high ring-2 ring-surface">
+<img alt="Marcus Thorne" data-alt="portrait of a bearded young man with short brown hair wearing a simple dark t-shirt with natural outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdB9XsGlysIycbL9fFMjMqRo8xD0ATC_MsSmByHjsv3BDl_vu32MGALNqHk2GU1JQMnbeXT9pwwNR4JZ0s7nT2aaeQb5BQwD3LoP3S_US6IlN_a0qKfdewHb9qL3YTOf3IykH9GvJPSpSVxEPvUyewrrOUq0Be7PjkygmssmVVHbgroe50fnWdBJp7F7QCZWiKMT12tzHNOuZmHciQwVxJkaJkjqrfsbn9YNgymWNEoTDH_3nJRfpxU5SkwqMpxvCrCMcyMsckcMbG"/>
+</div>
+<div class="flex-1">
+<h3 class="text-[17px] font-bold text-on-surface leading-none">Marcus Thorne</h3>
+<div class="mt-2 space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-bold text-secondary">
+<span>Workload: 38%</span>
+<span class="text-on-surface-variant/60 font-medium">0 Overdue</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 38%"></div>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors self-start">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="space-y-3">
+<!-- Task Card 1 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm border-l-4 border-tertiary">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[14px] font-bold text-on-surface">Security Audit</h4>
+<span class="bg-error-container/20 text-error px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">HIGH</span>
+</div>
+<div class="flex items-center justify-between text-[12px] text-on-surface-variant/50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>Oct 25</span>
+</div>
+<span class="bg-tertiary/10 text-tertiary px-1.5 py-0.5 rounded-[4px] text-[10px] font-bold opacity-100">STAGED</span>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[14px] font-bold text-on-surface">Cloud Provider Setup</h4>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">LOW</span>
+</div>
+<div class="flex items-center justify-between text-[12px] text-on-surface-variant/50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>Oct 28</span>
+</div>
+</div>
+</div>
+<!-- Empty state/Drop target for low workload -->
+<div class="border-2 border-dashed border-outline-variant/20 rounded-xl p-6 flex flex-col items-center justify-center text-center opacity-40 hover:opacity-100 transition-opacity cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary mb-2">add_circle</span>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant">ASSIGN TASK</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Bento Summary Statistics -->
+<div class="mt-12 grid grid-cols-4 gap-4">
+<div class="col-span-2 p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm flex flex-col justify-between h-[160px]">
+<span class="label-sm text-[10px] uppercase font-black tracking-widest text-on-surface-variant">Active Team Health</span>
+<div class="flex items-end gap-1">
+<span class="text-4xl font-black text-on-surface leading-none">84%</span>
+<span class="text-secondary font-bold text-xs mb-1">STABLE PERFORMANCE</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 84%"></div>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm h-[160px] flex flex-col justify-between">
+<span class="label-sm text-[10px] uppercase font-black tracking-widest text-on-surface-variant">System Bottlenecks</span>
+<div class="text-3xl font-black text-error">1</div>
+<p class="text-[11px] text-on-surface-variant font-medium">Critical overload detected in Frontend Team resources.</p>
+</div>
+<div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm h-[160px] flex flex-col justify-between">
+<span class="label-sm text-[10px] uppercase font-black tracking-widest text-on-surface-variant">Active Sprint</span>
+<div class="text-3xl font-black text-on-surface">V4.2</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-[11px] font-medium">6 days until release</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Command Bar (Glassmorphism) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 glass px-4 py-2 rounded-full border border-outline-variant/20 shadow-2xl flex items-center gap-4 z-50">
+<button class="flex items-center gap-2 px-3 py-1.5 hover:bg-surface-container-high rounded-full transition-colors text-on-surface font-bold text-xs">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+            Add Member
+        </button>
+<div class="w-px h-4 bg-outline-variant/30"></div>
+<button class="flex items-center gap-2 px-3 py-1.5 hover:bg-surface-container-high rounded-full transition-colors font-bold text-xs text-primary bg-primary/10">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+            Rebalance Load
+        </button>
+<div class="w-px h-4 bg-outline-variant/30"></div>
+<button class="p-1.5 bg-primary rounded-full text-on-primary hover:brightness-110 active:scale-90 transition-all">
+<span class="material-symbols-outlined">keyboard_command_key</span>
+</button>
+</div>
+</body></html>
